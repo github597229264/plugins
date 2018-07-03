@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>图片居中预览</title>
+		<meta type="viewport" content="width=device-width,initial-scale:1.0,user-scalable:no" />
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.upload {
+				display: inline-block;
+				position: relative;
+				background-image: url('img/wuti.jpg');/*父容器默认背景图*/
+				background-repeat: no-repeat;
+				background-size: cover;
+				border: solid 1px red;
+				width: 300px;/*父容器高宽必须设置，父容器的高宽比若不是1:1，预览的图片可能显示不完全*/
+				height: 300px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.upload .change {
+				position: absolute;
+				overflow: hidden;
+				right: 0;
+				top: 0;
+				opacity: 0;
+			}
+			.upload .showImg {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 父容器onclick事件和input onclick事件绑定 -->
+		<div class="upload" id="parentDiv" onclick="inputFile.click()">
+			<input class="change" id="inputFile" type="file" multiple="multiple" />
+			<img  class="showImg" id="previewImage" />
+		</div>
+	</body>
+	<script type="text/javascript" src="js/picture.preview.plugin.js"></script>
+	<script type="text/javascript">
+		var paramObj = {
+			parentDivId: 'parentDiv',
+			previewImageId: 'previewImage',
+			inputFileId: 'inputFile'
+		}
+		PPPlugin.previewFunc(paramObj);
+	</script>
+
+</html>
