@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> canvas 绘制时钟</title>
+		<style>
+			body{
+				background-color: #000000;
+			}
+			canvas{
+				background-color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="cvs" width="800px" height="800px" ></canvas>
+		<script src="js/canvas.clock.plugin.js"></script>
+		<script>
+			CCPlugin.initClock({
+				x:400,
+				y:400,
+				r:200,
+				canvasId:"cvs"
+			});
+		</script>
+	</body>
+</html>
