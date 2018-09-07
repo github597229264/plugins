@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>图片居中裁剪</title>
+		<meta type="viewport" content="width=device-width,initial-scale:1.0,user-scalable:no" />
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			canvas{
+				border:1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- canvas 必须设置他的width 和 height属性的值 并且 目前只支持 width=height的情况-->
+		<canvas id="testCanvas" width="500" height="500"></canvas>
+	</body>
+	
+	<script type="text/javascript" src="js/cut.picture.plugin.js"></script>
+	<script type="text/javascript">
+		var paramObj = {
+			canvasId: 'testCanvas',//canvas id名
+			imageUrl: 'https://goss.veer.com/creative/vcg/veer/1600water/veer-307357405.jpg'//width>height
+			//imageUrl: 'http://img.zcool.cn/community/014cbd584f967aa801219c770a0f54.jpg@1280w_1l_2o_100sh.png' //width<height
+			//imageUrl: 'http://img.sccnn.com/bimg/338/27467.jpg' //width=height
+		};
+		PPPlugin.cutImgAfter(paramObj);
+	</script>
+
+</html>
