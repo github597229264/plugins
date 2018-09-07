@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>数字滚动插件</title>
+		<link rel="stylesheet" href="css/numberScroll.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.number.scroll.js"></script>
+	</head>
+	<body>
+		<br><br> 有分隔符，有小数点：
+		<div class="numberRun"></div> <br><br> 只有分隔符：
+		<div class="numberRun2"></div> <br><br> 只有小数点：
+		<div class="numberRun3"></div> <br><br> 无分隔符，无小数点：
+		<div class="numberRun4"></div>
+		<script>
+			$(function() {
+				//有分隔符，有小数点
+				var nums = 15343242.10;
+				var numRun = $(".numberRun").numberAnimate({//初始化
+					num: '15343242.10',
+					dot: 2,
+					speed: 2000,
+					setSymbol: ",",
+					numberSize:272,
+					numberColor:"#ED1C24"
+				});
+				setInterval(function() {
+					nums += 3433.24;
+					numRun.resetData(nums);
+				}, 3000);
+				//只有分隔符
+				var nums2 = 15343242;
+				var numRun2 = $(".numberRun2").numberAnimate({
+					num: '15343242',
+					speed: 2000,
+					setSymbol: ",",
+					numberSize:48,
+					numberColor:"#3F48CC"
+				});
+				setInterval(function() {
+					nums2 += 1433;
+					numRun2.resetData(nums2);
+				}, 3000);
+				//只有小数点
+				var nums3 = 52353434.343;
+				var numRun3 = $(".numberRun3").numberAnimate({
+					num: '52353434.343',
+					dot: 3,
+					speed: 2000,
+					numberSize:190,
+					numberColor:"#880015"
+				});
+				setInterval(function() {
+					nums3 += 454.521;
+					numRun3.resetData(nums3);
+				}, 4000);
+				//无分隔符，无小数点
+				var nums4 = 52353434;
+				var numRun4 = $(".numberRun4").numberAnimate({
+					num: '52353434',
+					speed: 2000
+				});
+				setInterval(function() {
+					nums4 += 123454;
+					numRun4.resetData(nums4);
+				}, 3500);
+			});
+		</script>
+	</body>
+</html>
